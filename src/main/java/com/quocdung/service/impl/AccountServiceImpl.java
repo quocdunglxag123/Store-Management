@@ -20,7 +20,6 @@ import com.quocdung.mapstruct.AccountMapper;
 import com.quocdung.repository.AccountRepository;
 import com.quocdung.service.AccountService;
 
-
 @Service
 @Transactional
 public class AccountServiceImpl implements AccountService {
@@ -44,6 +43,7 @@ public class AccountServiceImpl implements AccountService {
 		Account account = accountRepo.findOneById(id);
 		if(account==null)
 		    throw new AccountException(id);
+			
 		Set<String> rolenames = new HashSet<String>();
 		for (Role element : account.getRoles()) {
 			rolenames.add(element.getName());
@@ -57,7 +57,7 @@ public class AccountServiceImpl implements AccountService {
 	public Object addAccount(AccountDto accountDto) {
 		Account account = accountMapper.accountDtoToAccount(accountDto);
 		String rawPassword = account.getPassword();
-		String encodedPassword = passwordEncoder.encode(rawPassword);
+		String encodedPassword = passwordEncoder.encode(rawPassword);// thuat toan ma hoa BCrypt
 		account.setPassword(encodedPassword);
 		accountRepo.save(account);
 		return accountDto;

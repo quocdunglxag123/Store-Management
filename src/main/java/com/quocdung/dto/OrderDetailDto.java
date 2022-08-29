@@ -1,33 +1,21 @@
 package com.quocdung.dto;
 
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class OrderDetailDto {
 	@JsonProperty("detailId")
 	private Integer id;
-	
+
+	@JsonProperty("order")
+	private OrderDto order;
 	@JsonProperty("product")
-	private ProductCartDto product;
-	
-	@JsonProperty("price")
-	private float price;
-	
+	private ProductDto product;
+
+	@JsonProperty("totalprice")
+	private float totalprice;
+
 	@JsonProperty("quantity")
 	private int quantity;
-
-	public OrderDetailDto() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public OrderDetailDto(Integer id, ProductCartDto product, float price, int quantity) {
-		super();
-		this.id = id;
-		this.product = product;
-		this.price = price;
-		this.quantity = quantity;
-	}
 
 	public Integer getId() {
 		return id;
@@ -37,20 +25,40 @@ public class OrderDetailDto {
 		this.id = id;
 	}
 
-	public ProductCartDto getProduct() {
+	public OrderDetailDto() {
+	}
+
+	public OrderDetailDto(Integer id, OrderDto order, ProductDto product, float totalprice, int quantity) {
+		super();
+		this.id = id;
+		this.order = order;
+		this.product = product;
+		this.totalprice = totalprice;
+		this.quantity = quantity;
+	}
+
+	public OrderDto getOrder() {
+		return order;
+	}
+
+	public void setOrder(OrderDto order) {
+		this.order = order;
+	}
+
+	public ProductDto getProduct() {
 		return product;
 	}
 
-	public void setProduct(ProductCartDto product) {
+	public void setProduct(ProductDto product) {
 		this.product = product;
 	}
 
-	public float getPrice() {
-		return price;
+	public float getTotalprice() {
+		return totalprice;
 	}
 
-	public void setPrice(float price) {
-		this.price = price;
+	public void setTotalprice(float totalprice) {
+		this.totalprice = totalprice;
 	}
 
 	public int getQuantity() {
@@ -60,7 +68,6 @@ public class OrderDetailDto {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-
 
 	
 }

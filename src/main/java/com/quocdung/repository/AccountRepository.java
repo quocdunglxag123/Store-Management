@@ -11,5 +11,6 @@ import com.quocdung.entity.Account;
 @Repository
 public interface AccountRepository extends JpaRepository<Account, Integer> {
 	Account findOneById(Integer id);
+
 	Optional<Account> findByUsername(String username);
 }

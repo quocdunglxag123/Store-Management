@@ -57,4 +57,9 @@ public class StoreController {
 			@RequestBody StoreDto storeDto) {
 		return new DataResponse(storeImpl.updatePropertyStore(store_id, storeDto));
 	}
+	
+	@GetMapping("/product/{id}")
+	public DataResponse getStoreByProductId(@PathVariable(value = "id") Integer productId){
+		return new DataResponse(storeImpl.getStoreByProductId(productId));
+	}
 }

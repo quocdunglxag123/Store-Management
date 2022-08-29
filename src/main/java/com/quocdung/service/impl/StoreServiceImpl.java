@@ -15,6 +15,7 @@ import com.quocdung.mapstruct.StoreMapper;
 import com.quocdung.repository.StoreRepository;
 import com.quocdung.service.StoreService;
 
+
 @Service
 public class StoreServiceImpl implements StoreService {
 
@@ -60,7 +61,7 @@ public class StoreServiceImpl implements StoreService {
 	}
 
 	@Override
-	public Object addStore(StoreDto storeDto) {
+	public Object addStore(StoreDto storeDto) {	
 		return storeRepo.save(storeMapper.storeDtoToStore(storeDto));
 	}
 
@@ -98,11 +99,10 @@ public class StoreServiceImpl implements StoreService {
 		return storeMapper.storeToStoreDto(storeOld);
 	}
 
-	/*
-	 * private List<StoreDto> convertStoreList(List<Store> entities) { return new
-	 * ArrayList<>();
-	 * 
-	 * }
-	 */
+	@Override
+	public Object getStoreByProductId(Integer productId) {
+		return storeMapper.storesToStoreDtos(storeRepo.findByProductId(productId));
+	}
+
 
 }

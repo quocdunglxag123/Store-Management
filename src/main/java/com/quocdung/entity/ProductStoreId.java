@@ -10,6 +10,19 @@ public class ProductStoreId implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private Product product;
 	private Store store;
+	
+	
+	public ProductStoreId() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public ProductStoreId(Product product, Store store) {
+		super();
+		this.product = product;
+		this.store = store;
+	}
+	
 	public Product getProduct() {
 		return product;
 	}

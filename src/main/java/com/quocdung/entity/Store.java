@@ -84,6 +84,26 @@ public class Store {
 		this.address = address;
 	}
 
+	
+	public List<Order> getOrders() {
+		return orders;
+	}
+
+
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
+	}
+
+
+	public List<ProductsStores> getProductsStores() {
+		return productsStores;
+	}
+
+
+	public void setProductsStores(List<ProductsStores> productsStores) {
+		this.productsStores = productsStores;
+	}
+
 
 	public Store(String storeName, String cityName, String address, List<ProductsStores> productsStores) {
 		super();

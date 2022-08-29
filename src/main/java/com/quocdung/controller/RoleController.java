@@ -60,7 +60,7 @@ public class RoleController {
 	}
 
 	@PutMapping("/{role_id}")
-	@RolesAllowed({"ROLE_ADMIN"})
+	@RolesAllowed({"ROLE_ADMIN","ROLE_EDITOR"})
 	public DataResponse updateRole(@PathVariable(value = "role_id") Integer role_id, @RequestBody RoleDto roleDto) {
 		return new DataResponse(roleImpl.updateRole(role_id, roleDto));
 	}

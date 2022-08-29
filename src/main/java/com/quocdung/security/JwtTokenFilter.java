@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -16,11 +15,9 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Component;
 import org.springframework.util.ObjectUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
-import org.springframework.web.servlet.HandlerExceptionResolver;
 
 import com.quocdung.entity.Account;
 import com.quocdung.entity.Role;
-import com.quocdung.exception.TokenException;
 
 import io.jsonwebtoken.Claims;
 
@@ -29,12 +26,7 @@ import io.jsonwebtoken.Claims;
 public class JwtTokenFilter extends OncePerRequestFilter {
 	@Autowired
 	private JwtTokenUtil jwtUtil;
-	
-	//@Autowired
-	//private HandlerExceptionResolver handlerExceptionResolver;
-	//private TokenException tokenException;
-	
-	
+
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, 
 				HttpServletResponse response, FilterChain filterChain)
@@ -59,9 +51,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
 	private boolean hasAuthorizationBearer(HttpServletRequest request) {
 		String header = request.getHeader("Authorization");
 		if (ObjectUtils.isEmpty(header) || !header.startsWith("Bearer")) {
-			//handlerExceptionResolver.resolveException(request, null, null, tokenException );
 			return false;
-
 		}
 
 		return true;

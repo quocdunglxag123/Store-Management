@@ -1,12 +1,12 @@
 package com.quocdung.service;
 
 
-import com.quocdung.dto.OrderDetailDto;
+import com.quocdung.dto.OrderDetailInPutDto;
 
 public interface OrderDetailService {
-	//List<OrderDetailDto> getOrderDetailsByOrderId(Integer orderId);
-	
+	Object getAllOrderDetail();
 	Object getOrderDetail(Integer id);
-	
-	Object addOrderDetail(OrderDetailDto orderDetailDto);
+	void deleteOrderDetail(Integer id);
+	Object addOrderDetail(OrderDetailInPutDto orderDetailInPutDto);
+	Object updateOrderDetail(Integer id,Integer quanlity);
 }

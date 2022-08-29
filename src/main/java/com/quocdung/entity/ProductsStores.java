@@ -24,6 +24,20 @@ public class ProductsStores {
 	
 	private int inStock;
 	
+	public ProductsStores() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	public ProductsStores(Product product, Store store, int inStock) {
+		super();
+		this.product = product;
+		this.store = store;
+		this.inStock = inStock;
+	}
+
+	
+
 	public Product getProduct() {
 		return product;
 	}
@@ -46,6 +60,11 @@ public class ProductsStores {
 
 	public void setInStock(int inStock) {
 		this.inStock = inStock;
+	}
+
+	@Override
+	public String toString() {
+		return "ProductsStores [product=" + product.getName() + ", store=" + store.getStoreName() + ", inStock=" + inStock + "]";
 	}
 	
 	

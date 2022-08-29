@@ -43,6 +43,27 @@ public class ProductDto {
 	
 	@JsonProperty("unit")
 	private String unit;
+	
+	@JsonProperty("ram")
+	private String ram;
+	
+	@JsonProperty("rom")
+	private String rom;
+	
+	@JsonProperty("screen")
+	private String screen;
+	
+	@JsonProperty("battery")
+	private String battery;
+	
+	@JsonProperty("os")
+	private String os;
+	
+	@JsonProperty("camera")
+	private String camera;
+	
+	@JsonProperty("color")
+	private String color;
 
 	public Integer getId() {
 		return id;
@@ -139,6 +160,63 @@ public class ProductDto {
 	public void setUnit(String unit) {
 		this.unit = unit;
 	}
+
+	public String getRam() {
+		return ram;
+	}
+
+	public void setRam(String ram) {
+		this.ram = ram;
+	}
+
+	public String getRom() {
+		return rom;
+	}
+
+	public void setRom(String rom) {
+		this.rom = rom;
+	}
+
+	public String getScreen() {
+		return screen;
+	}
+
+	public void setScreen(String screen) {
+		this.screen = screen;
+	}
+
+	public String getBattery() {
+		return battery;
+	}
+
+	public void setBattery(String battery) {
+		this.battery = battery;
+	}
+
+	public String getOs() {
+		return os;
+	}
+
+	public void setOs(String os) {
+		this.os = os;
+	}
+
+	public String getCamera() {
+		return camera;
+	}
+
+	public void setCamera(String camera) {
+		this.camera = camera;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
 	
 	
 }

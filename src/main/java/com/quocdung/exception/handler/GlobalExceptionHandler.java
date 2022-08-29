@@ -1,13 +1,12 @@
 package com.quocdung.exception.handler;
 
+import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.quocdung.dto.DataResponse;
 import com.quocdung.exception.AccountException;
-import com.quocdung.exception.TokenException;
-
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
@@ -24,10 +23,11 @@ public class GlobalExceptionHandler {
 		return new DataResponse("400", e.getMessage(), 200);
 	}
 	
-	@ExceptionHandler(TokenException.class)
+	@ExceptionHandler(HttpRequestMethodNotSupportedException.class)
 	@ResponseBody
-	public DataResponse handleAccountException(TokenException e) {
-		return new DataResponse("400", e.getMessage(), 200);
+	public DataResponse handleHttpRequestMethodNotSupportedException(HttpRequestMethodNotSupportedException e) {
+		return new DataResponse("404","Please change method type",200);
 	}
+
 
 }

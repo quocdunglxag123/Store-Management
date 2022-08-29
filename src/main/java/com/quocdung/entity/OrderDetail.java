@@ -26,7 +26,7 @@ public class OrderDetail {
 	@JoinColumn(name = "product_id")
 	private Product product;
 	
-	private float price;
+	private float totalprice;
 	
 	private int quantity;
 
@@ -35,11 +35,11 @@ public class OrderDetail {
 		// TODO Auto-generated constructor stub
 	}
 
-	public OrderDetail(Order order, Product product, float price, int quantity) {
+	public OrderDetail(Order order, Product product, float totalprice, int quantity) {
 		super();
 		this.order = order;
 		this.product = product;
-		this.price = price;
+		this.totalprice = totalprice;
 		this.quantity = quantity;
 	}
 
@@ -67,12 +67,12 @@ public class OrderDetail {
 		this.product = product;
 	}
 
-	public float getPrice() {
-		return price;
+	public float getTotalprice() {
+		return totalprice;
 	}
 
-	public void setPrice(float price) {
-		this.price = price;
+	public void setTotalprice(float totalprice) {
+		this.totalprice = totalprice;
 	}
 
 	public int getQuantity() {

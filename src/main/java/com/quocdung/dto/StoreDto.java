@@ -1,5 +1,6 @@
 package com.quocdung.dto;
 
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class StoreDto {
@@ -14,15 +15,7 @@ public class StoreDto {
 	
 	@JsonProperty("address")
 	private String address;
-
-	public StoreDto(Integer id, String storeName, String cityName, String address) {
-		super();
-		this.id = id;
-		this.storeName = storeName;
-		this.cityName = cityName;
-		this.address = address;
-	}
-
+	
 	public Integer getId() {
 		return id;
 	}
@@ -54,7 +47,5 @@ public class StoreDto {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-
-	
 	
 }

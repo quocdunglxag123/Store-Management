@@ -7,7 +7,7 @@ import org.mapstruct.Mapper;
 import com.quocdung.dto.StoreDto;
 import com.quocdung.entity.Store;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring",uses=ProductsStoresMapper.class)
 public interface StoreMapper {
 	// ----------------------------Entity To DTO---------------------------
 

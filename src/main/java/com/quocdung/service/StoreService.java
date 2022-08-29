@@ -17,4 +17,6 @@ public interface StoreService {
 	Object updateStore(Integer id, StoreDto storeDto);
 	
 	Object updatePropertyStore(Integer id, StoreDto storeDto);
+	
+	Object getStoreByProductId(Integer productId);
 }
